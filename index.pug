@@ -1,0 +1,21 @@
+doctype html
+html
+    head
+        meta(charset="UTF-8")
+        title = "JS Drum Machine"
+    body
+        .wrapper
+            - const audioPathLiteral = {clap: "assets/CLAP.wav",crash: "assets/CRASH1.wav",base: "assets/BDRUM13.wav",bongo: "assets/BONGO1.wav",china: "assets/CHINA1.wav",hhClose: "assets/HHCLOSE1.wav",hhOpen: "assets/HHOPEN1.wav",ride: "assets/RIDEMID.wav",snare: "assets/SNARE12.wav",tomLow: "assets/TOMLOW1.wav",tomHigh: "assets/TOMHI1.wav"}
+            audio.audio(src=audioPathLiteral.base data-key="65")
+            audio.audio(src=audioPathLiteral.hhClose data-key="83")
+            audio.audio(src=audioPathLiteral.hhOpen data-key="68")
+            audio.audio(src=audioPathLiteral.crash data-key="70")
+            audio.audio(src=audioPathLiteral.snare data-key="71")
+            audio.audio(src=audioPathLiteral.tomLow data-key="72")
+            audio.audio(src=audioPathLiteral.tomHigh data-key="74")
+            audio.audio(src=audioPathLiteral.ride data-key="75")
+            audio.audio(src=audioPathLiteral.clap data-key="76")
+            audio.audio(src=audioPathLiteral.china data-key="65")
+            audio.audio(src=audioPathLiteral.bongo data-key="65")
+
+        script(src="index.js")
