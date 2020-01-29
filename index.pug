@@ -3,19 +3,26 @@ html
     head
         meta(charset="UTF-8")
         title = "JS Drum Machine"
+        link(rel="stylesheet" href="styles.css")
     body
         .wrapper
             - const audioPathLiteral = {clap: "assets/CLAP.wav",crash: "assets/CRASH1.wav",base: "assets/BDRUM13.wav",bongo: "assets/BONGO1.wav",china: "assets/CHINA1.wav",hhClose: "assets/HHCLOSE1.wav",hhOpen: "assets/HHOPEN1.wav",ride: "assets/RIDEMID.wav",snare: "assets/SNARE12.wav",tomLow: "assets/TOMLOW1.wav",tomHigh: "assets/TOMHI1.wav"}
             audio.audio(src=audioPathLiteral.base data-key="65")
+            kbd.key(data-key="65")= "a"
             audio.audio(src=audioPathLiteral.hhClose data-key="83")
+            kbd.key(data-key="83")="s"
             audio.audio(src=audioPathLiteral.hhOpen data-key="68")
+            kbd.key(data-key="68")="d"
             audio.audio(src=audioPathLiteral.crash data-key="70")
+            kbd.key(data-key="70")="f"
             audio.audio(src=audioPathLiteral.snare data-key="71")
+            kbd.key(data-key="71")="g"
             audio.audio(src=audioPathLiteral.tomLow data-key="72")
+            kbd.key(data-key="72")="h"
             audio.audio(src=audioPathLiteral.tomHigh data-key="74")
+            kbd.key(data-key="74")="j"
             audio.audio(src=audioPathLiteral.ride data-key="75")
+            kbd.key(data-key="75")="k"
             audio.audio(src=audioPathLiteral.clap data-key="76")
-            audio.audio(src=audioPathLiteral.china data-key="65")
-            audio.audio(src=audioPathLiteral.bongo data-key="65")
-
+            kbd.key(data-key="76")="l"
         script(src="index.js")
