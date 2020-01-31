@@ -13,3 +13,7 @@ img {
 body {
     text-align: center;
 }
+
+.hl {
+    color: var(--base);
+}
