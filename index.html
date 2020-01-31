@@ -41,6 +41,11 @@
     <img src="http://picsum.photos/id/1015/800/500" alt="example img">
     <script>
         const inputs = document.querySelectorAll('.controls input')
+
+        function handleUpdate() {
+     console.log(this.value)
+}
+inputs.forEach(el => el.addEventListener('change', handleUpdate))
     </script>
 </body>
 </html>
