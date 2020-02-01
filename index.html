@@ -105,6 +105,9 @@
         console.log(century)
         // Array.prototype.map()
         // 2. Give us an array of the inventors first and last names
+        
+        const firstAndLastNames = inventors.map(inv => `${inv.first} ${inv.last}`)
+        console.log(firstAndLastNames)
 
         // Array.prototype.sort()
         // 3. Sort the inventors by birthdate, oldest to youngest
