@@ -156,10 +156,12 @@
         
         const alpha = people.sort((current, next) => {
             
-            const [firstName, lastName] = current.split(',')
-            console.log(firstName)
+            const [lastName, firstName] = current.split(',')
+            const [nextLastName, nextFirstName] = next.split(',')
+            return lastName > nextLastName ? 1 : -1
             
         })
+        console.table(alpha)
 
         // 8. Reduce Exercise
         // Sum up the instances of each of these
