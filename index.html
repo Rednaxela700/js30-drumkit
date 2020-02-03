@@ -39,7 +39,14 @@
         }
 
         function displayMatches() {
-            console.log(this.value)
+
+            const matchArray = findMatches(this.value, cities)
+            const html = matchArray.map(result => (
+                `<li>
+                    <span class="name">${result.city}, ${result.state}</span>
+                    <span class="population">${result.population}</span>
+                </li>`
+            ))
         }
 
         const searchInput = document.querySelector('.search')
