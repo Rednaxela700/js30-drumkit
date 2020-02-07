@@ -12,10 +12,17 @@
   display: flex
   justify-content: center
   align-items: center
+  flex-direction: column
   height: 100vh
   width: 100vw
   padding: 1rem 2rem
   background: url("./assets/bg.jpg")
+
+.container
+  display: flex
+  justify-content: center
+  align-items: center
+  padding: 10px
 
 .key
   margin: 10px
@@ -29,3 +36,7 @@
 .playing
   transform: scale(1.1)
   border-color: #ff2d08
+
+.helper
+  &__text
+    color: #ffc79a

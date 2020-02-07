@@ -13,10 +13,18 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 100vh;
   width: 100vw;
   padding: 1rem 2rem;
   background: url("./assets/bg.jpg");
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 }
 
 .key {
@@ -31,6 +39,10 @@ body {
 .playing {
   transform: scale(1.1);
   border-color: #ff2d08;
+}
+
+.helper__text {
+  color: #ffc79a;
 }
 
 /*# sourceMappingURL=styles.css.map */
