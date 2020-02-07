@@ -82,6 +82,12 @@
             .findIndex(el => el.id === 823423)
         comments.splice(idx, 1)
         console.table(comments)
+        
+        const newComments = [
+            ...comments.slice(0, idx),
+            ...comments.slice(idx)
+        ]
+        console.table(newComments)
     </script>
 </body>
 
