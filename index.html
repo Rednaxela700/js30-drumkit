@@ -16,24 +16,45 @@
         ctx.strokeStyle = '#bada55' //set color
         ctx.lineJoin = 'round' //set stroke shape aka square, round etc
         ctx.lineCap = 'round'
+        ctx.lineWidth = 100
 
         let isDrawing = false // creating a flag to draw when clicked instead of mouseover
         let lastX = 0
         let lastY = 0
+        let hue = 0
+        let direction = true // flag to manipulate lineWidth
 
         function draw(e) {
             if (!isDrawing) return //stop function from running when is not drawing
-            console.log(e)
+            ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`
             ctx.beginPath() //start drawing path
             ctx.moveTo(lastX, lastY) //starting coordinates for drawing
             ctx.lineTo(e.offsetX, e.offsetY) //make line to mouse coordinates
             ctx.stroke()
-            [lastX, lastY] = [e.offsetX, e.offsetY] //set current mouse position to lastX,lastY
+            lastX = e.offsetX
+            lastY = e.offsetY
+            hue++
+            if (hue >= 360) {
+                hue = 0
+            }
+            if (ctx.lineWidth >= 100 || ctx.lineWidth <= 1) {
+                direction = !direction
+            }
+            if (!direction) { //if direction false decrement lineWidth
+                ctx.lineWidth--
+            } else {
+                ctx.lineWidth++
+            }
         }
+        canvas.addEventListener('mousedown', (e) => { //when mouse key is pressed start drawing
+            isDrawing = true
+            lastX = e.offsetX // update saved coordinates to current mouse coordinates
+            lastY = e.offsetY
+        })
         canvas.addEventListener('mousemove', draw)
-        canvas.addEventListener('mousedown', () => isDrawing = true) //when mouse key is pressed start drawing
         canvas.addEventListener('mouseup', () => isDrawing = false) //when if not stop drawing
-        canvas.addEventListener('mouseup', () => isDrawing = false) //when mouse leaves the window and come back stop drawing
+        canvas.addEventListener('mouseup', () => isDrawing =
+        false) //when mouse leaves the window and come back stop drawing
     </script>
     <style>
         html,
