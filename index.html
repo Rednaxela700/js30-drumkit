@@ -28,7 +28,7 @@
             ctx.moveTo(lastX, lastY) //starting coordinates for drawing
             ctx.lineTo(e.offsetX, e.offsetY) //make line to mouse coordinates
             ctx.stroke()
-            [lastX, lastY] = [e.offsetX, e.offsetY]
+            [lastX, lastY] = [e.offsetX, e.offsetY] //set current mouse position to lastX,lastY
         }
         canvas.addEventListener('mousemove', draw)
         canvas.addEventListener('mousedown', () => isDrawing = true) //when mouse key is pressed start drawing
