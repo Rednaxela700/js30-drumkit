@@ -1,0 +1,122 @@
+$font-primary: #70beca
+$font-secondary: #d29b62
+$font-red: #d26b62
+$outside-border: 6px solid $font-secondary
+
+*
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+
+@at-root
+    body
+        font-family: Lato, sans-serif
+        font-size: 16px
+        overflow: hidden
+
+.wrapper
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100vw
+    height: 100vh
+    padding: 1rem
+    background-color: #333945
+
+.container
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    position: relative
+    width: 360px
+    height: 360px
+    padding: 10px
+    border: 1px solid $font-secondary
+    &::after
+        content: ''
+        position: absolute
+        top: -.5rem
+        right: -.5rem
+        width: 360px
+        height: 360px
+        outline: 1px solid $font-primary
+        z-index: 1
+
+.clock
+    &__container
+        position: relative
+        width: 300px
+        height: 300px
+        background: round
+        border: 4px solid $font-secondary
+        border-radius: 50%
+
+    &__bullet
+        position: absolute
+        top: 49%
+        left: 48%
+        width: 10px
+        height: 10px
+        background-color: $font-primary
+        z-index: 5
+        border-radius: 50%
+
+    &__hand
+        position: absolute
+        top: 80px
+        left: 49%
+        height: 45%
+        min-width: 2px
+        max-width: 45%
+        min-height: 2px
+        border-radius: 10px
+
+    &__second
+        top: 22.5px
+        left: 145px
+        height: 250px
+        z-index: 3
+
+        & > .hand
+                &__visible
+                    background-color: $font-primary
+                &__hidden
+                    background-color: transparent
+
+    &__minute
+        width: 4px
+        top: 33px
+        height: 230px
+        min-height: 4px
+        max-width: 80%
+        z-index: 2
+
+        & > .hand
+            &__visible
+                background-color: $font-secondary
+            &__hidden
+                background-color: transparent
+
+    &__hour
+        top: 83px
+        width: 8px
+        min-height: 16px
+        left: 140px
+        z-index: 1
+
+        & > .hand
+            &__visible
+                background-color: $font-secondary
+            &__hidden
+                background-color: transparent
+
+.hand
+    &__hidden
+        height: 50%
+        width: 100%
+
+    &__visible
+        height: 50%
+        width: 100%
+        border-radius: 10px
