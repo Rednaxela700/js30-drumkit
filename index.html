@@ -40,7 +40,7 @@
             if (ctx.lineWidth >= 100 || ctx.lineWidth <= 1) {
                 direction = !direction
             }
-            if (!direction) {
+            if (!direction) { //if direction false decrement lineWidth
                 ctx.lineWidth--
             } else {
                 ctx.lineWidth++
