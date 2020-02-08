@@ -31,8 +31,12 @@
             lastX = e.offsetX
             lastY = e.offsetY
         }
+        canvas.addEventListener('mousedown', (e) => { //when mouse key is pressed start drawing
+            isDrawing = true
+            lastX = e.offsetX // update saved coordinates to current mouse coordinates
+            lastY = e.offsetY
+        })
         canvas.addEventListener('mousemove', draw)
-        canvas.addEventListener('mousedown', () => isDrawing = true) //when mouse key is pressed start drawing
         canvas.addEventListener('mouseup', () => isDrawing = false) //when if not stop drawing
         canvas.addEventListener('mouseup', () => isDrawing = false) //when mouse leaves the window and come back stop drawing
     </script>
