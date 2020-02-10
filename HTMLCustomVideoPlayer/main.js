@@ -15,3 +15,8 @@ function togglePlay() {
 }
 
 toggle.addEventListener('click', togglePlay)
+window.addEventListener('keydown', (e) => {
+    if (e.key === ' ') {
+        togglePlay()
+    }
+})
