@@ -36,11 +36,17 @@ function handleProgress() {
     progressBar.style.width = `${percent}%`
 }
 
+function scrub(e) {
+    const scrubTime = (e.offsetX / progress.offsetWidth) * video.duration
+    video.currentTime = scrubTime
+}
+
 ranges.forEach(el => el.addEventListener('change', handleRange))
 ranges.forEach(el => el.addEventListener('mousemove', handleRange))
 video.addEventListener('timeupdate', handleProgress)
 video.addEventListener('play', updateButton)
 video.addEventListener('pause', updateButton)
+progress.addEventListener('click', scrub)
 
 toggle.addEventListener('click', togglePlay)
 window.addEventListener('keydown', (e) => {
