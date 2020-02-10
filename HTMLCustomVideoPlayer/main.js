@@ -31,8 +31,14 @@ function handleRange() {
 }
 skipButtons.forEach(el => el.addEventListener('click', skip))
 
+function handleProgress() {
+    const percent = (video.currentTime / video.duration) * 100
+    progressBar.style.width = `${percent}%`
+}
+
 ranges.forEach(el => el.addEventListener('change', handleRange))
 ranges.forEach(el => el.addEventListener('mousemove', handleRange))
+video.addEventListener('timeupdate', handleProgress)
 video.addEventListener('play', updateButton)
 video.addEventListener('pause', updateButton)
 
