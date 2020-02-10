@@ -20,6 +20,12 @@ function updateButton () {
     toggle.innerText = icon
 }
 
+function skip() {
+    const skip = parseFloat(this.dataset.skip)
+    video.currentTime += skip
+}
+
+skipButtons.forEach(el => el.addEventListener('click', skip))
 video.addEventListener('play', updateButton)
 video.addEventListener('pause', updateButton)
 
