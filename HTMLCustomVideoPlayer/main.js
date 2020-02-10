@@ -25,7 +25,14 @@ function skip() {
     video.currentTime += skip
 }
 
+
+function handleRange() {
+    video[this.name] = this.value
+}
 skipButtons.forEach(el => el.addEventListener('click', skip))
+
+ranges.forEach(el => el.addEventListener('change', handleRange))
+ranges.forEach(el => el.addEventListener('mousemove', handleRange))
 video.addEventListener('play', updateButton)
 video.addEventListener('pause', updateButton)
 
