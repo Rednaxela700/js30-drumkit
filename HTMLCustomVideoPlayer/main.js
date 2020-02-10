@@ -14,6 +14,15 @@ function togglePlay() {
     }
 }
 
+function updateButton () {
+    console.log('hello')
+    const icon = this.paused ? '⏸️' : '⏯️'
+    toggle.innerText = icon
+}
+
+video.addEventListener('play', updateButton)
+video.addEventListener('pause', updateButton)
+
 toggle.addEventListener('click', togglePlay)
 window.addEventListener('keydown', (e) => {
     if (e.key === ' ') {
