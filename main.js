@@ -1,19 +1,35 @@
 const checkboxes = document.querySelectorAll('input')
 const checkboxesArr = Array.from(checkboxes)
-console.log(checkboxesArr)
+let firstItem = ''
 
-checkboxesArr.map(
-    (el, idx) => el.no = idx)
+checkboxesArr.map((el, idx) => el.index = idx) //add property of index to input DOM
 
-function checkEmpty(start, end) {
-    end.no
-    console.log(start)
-    const currentCheckboxes = checkboxesArr.filter(item => item.no >= start.no && item.no <= end.no && item.checked !== start.checked)
+function checkEmpty(start, end) { //checks checkboxes from start to end
+    let currentCheckboxes;
+    if (start.index < end.index) { //determine if user increments or decrements
+        currentCheckboxes = checkboxesArr.filter(item => item.index >= start.index && item.index <= end.index)
+    } else {
+        currentCheckboxes = checkboxesArr.filter(item => item.index <= start.index && item.index >= end.index)
+    }
     currentCheckboxes.forEach(el => el.checked = start.checked)
-    console.log(currentCheckboxes)
 }
 
-checkboxesArr.forEach(el => el.addEventListener('click', (e) => {
-    console.log(e.target.no)
-    checkEmpty(e.target, checkboxesArr[3])
-}))
+function handleFirstClick(e) {
+    return firstItem = e.target
+}
+
+function handleSecondClick(e) {
+    checkEmpty(firstItem, e.target)
+    //clean
+    checkboxes.forEach(el => el.removeEventListener('click', handleSecondClick))
+    checkboxes.forEach(el => el.addEventListener('click', handleFirstClick))
+    firstItem = ''
+}
+
+checkboxes.forEach(el => el.addEventListener('click', handleFirstClick))
+window.addEventListener('keydown', (e) => {
+    if (e.keyCode !== 16) return
+    checkboxes.forEach(el => el.removeEventListener('click', handleFirstClick))
+    checkboxes.forEach(el => el.addEventListener('click', handleSecondClick))
+
+})
