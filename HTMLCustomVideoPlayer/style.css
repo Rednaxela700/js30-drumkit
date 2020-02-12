@@ -14,8 +14,26 @@ body {
 }
 
 .player {
+    position: relative;
     width: auto;
     min-height: 300px;
+    height: 358px;
+}
+
+.viewer {
+    height: 100%;
+}
+
+.player__controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333945;
+}
+
+.player__button.toggle {
+    width: 30px;
 }
 
 .progress {
@@ -25,8 +43,35 @@ body {
 }
 
 .progress__filled {
-    background-color: #d29b62;
+    background-color: #d26262;
     flex: 0;
     height: 10px;
     width: 0;
 }
+
+.player__inputs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.player__button {
+    height: 30px;
+    background-color: transparent;
+    color: #d26262;
+}
+
+.player__rewind .player__button {
+    padding: 0 5px;
+}
+
+.player__slider {
+    vertical-align: middle;
+}
+
+
+/* input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    background-color: transparent;
+} */
