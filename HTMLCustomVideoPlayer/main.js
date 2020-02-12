@@ -15,9 +15,10 @@ function togglePlay() {
 }
 
 function updateButton () {
-    console.log('hello')
-    const icon = this.paused ? '⏸️' : '⏯️'
-    toggle.innerText = icon
+    const playButton = `<i class="icon-play"></i>`
+    const pauseButton = `<i class="icon-pause"></i>`
+    const icon = this.paused ? playButton : pauseButton
+    toggle.innerHTML = icon
 }
 
 function skip() {
