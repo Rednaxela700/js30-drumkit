@@ -277,9 +277,21 @@
                     (window.innerHeight + window.scrollY) -
                     //start slideIn when viewport is in the middle of an image
                     slideImage.height / 2
-                    console.log(slideInAt);
+
+                    //get coordinates of the bottom of the image
+                    const imageBottom = slideImage.offsetTop + slideImage.height
+
+                    const isHalfShown = slideInAt > slideImage.offsetTop;
+                    const isNotScorlledPast = window.scrollY < imageBottom;
+
+                    if(isHalfShown && isNotScorlledPast) {
+                        slideImage.classList.add('active')
+                    } else {
+                        slideImage.classList.remove('active')
+                    }
                 });
             }
+
             window.addEventListener("scroll", debounce(checkSlide));
         </script>
 
