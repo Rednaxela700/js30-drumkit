@@ -267,12 +267,20 @@
                 };
             }
 
-            const sliderImages = document.querySelectorAll('.slide-in')
+            const sliderImages = document.querySelectorAll(".slide-in");
 
             function checkSlide(e) {
-                console.log(e)
+                sliderImages.forEach(slideImage => {
+                    
+                    const slideInAt = 
+                    //pixel level of the bottom of shown page
+                    (window.innerHeight + window.scrollY) -
+                    //start slideIn when viewport is in the middle of an image
+                    slideImage.height / 2
+                    console.log(slideInAt);
+                });
             }
-            window.addEventListener('scroll', debounce(checkSlide))
+            window.addEventListener("scroll", debounce(checkSlide));
         </script>
 
         <style>
