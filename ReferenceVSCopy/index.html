@@ -88,6 +88,21 @@
 
         console.log(person, capitan)
 
+        //create a copy with obj assign
+        const cap2 = Object.assign({}, person, {
+            age: 17,
+            newprop: 'asd'
+        })
+        console.log(cap2)
+        console.log(person)
+
+        //create a copy with ES6
+        const cap3 = {
+            ...person //if there will be another nested object it won't be spread, spread goes one level deep
+        }
+        console.table(cap3)
+
+
         // and think we make a copy:
 
         // how do we take a copy instead?
