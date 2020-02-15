@@ -117,7 +117,13 @@
         spreadAl.social.tweeter = '@OMG'
 
         console.log(spreadAl)
-        console.log(al)
+        console.log(al) //if you need a deep copy use a function
+
+        //another way to make a deep copy is using JSON parse and stringify methods
+        const al2 = JSON.parse(JSON.stringify(al))
+        al2.social.fb = 'no reference in here'
+        console.table(al)
+        console.table(al2)
 
         // and think we make a copy:
 
