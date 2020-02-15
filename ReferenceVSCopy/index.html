@@ -83,6 +83,11 @@
             age: 80
         };
 
+        const capitan = person //this is a reference to the original obj
+        capitan.age = 55 //modifying both objs
+
+        console.log(person, capitan)
+
         // and think we make a copy:
 
         // how do we take a copy instead?
