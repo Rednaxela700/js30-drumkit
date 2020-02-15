@@ -35,6 +35,23 @@
 
         console.log(players)
         console.log(team)
+
+        //making a copy of players array
+
+        const newTeam = players.slice() //empty slice will return new arr
+        newTeam[3] = 'Josh'
+        console.log(newTeam)
+
+        const newTeam2 = [].concat(players) //concat empty arr with existing one
+        console.log({
+            newTeam2
+        })
+
+        const newTeamES6 = [...players] // use spread operator in ES6
+        newTeamES6[1] = 'Paul'
+        console.log(newTeamES6)
+
+
         // You might think we can just do something like this:
 
         // however what happens when we update that array?
