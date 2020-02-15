@@ -102,6 +102,22 @@
         }
         console.table(cap3)
 
+        const al = {
+            name: 'Al',
+            social: {
+                tweeter: '@al',
+                fb: 'al.fb'
+            }
+        }
+
+        const spreadAl = {
+            ...al //inner object is still a reference
+        }
+
+        spreadAl.social.tweeter = '@OMG'
+
+        console.log(spreadAl)
+        console.log(al)
 
         // and think we make a copy:
 
