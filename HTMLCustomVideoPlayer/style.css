@@ -14,8 +14,26 @@ body {
 }
 
 .player {
+    position: relative;
     width: auto;
     min-height: 300px;
+    height: 358px;
+}
+
+.viewer {
+    height: 100%;
+}
+
+.player__controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333945;
+}
+
+.player__button.toggle {
+    width: 30px;
 }
 
 .progress {
@@ -25,8 +43,90 @@ body {
 }
 
 .progress__filled {
-    background-color: #d29b62;
+    background-color: #d26262;
     flex: 0;
     height: 10px;
     width: 0;
+}
+
+.player__inputs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.player__sliders {
+    display: flex;
+}
+
+.player__button {
+    height: 30px;
+    background-color: transparent;
+    color: #d26262;
+}
+
+.player__rewind .player__button {
+    padding: 0 5px;
+}
+
+.player__slider {
+    vertical-align: middle;
+}
+
+/* hide default slider line */
+input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    background-color: transparent;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 25px;
+    width: 12px;
+    border-radius: 3px;
+    background: #d29b62;
+    cursor: pointer;
+    margin-top: 1px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+    /* box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; */
+}
+
+input[type=range]::-moz-range-thumb {
+    height: 25px;
+    width: 12px;
+    border-radius: 3px;
+    background: #d29b62;
+    cursor: pointer;
+}
+
+input[type=range]::-ms-thumb {
+    height: 25px;
+    width: 12px;
+    border-radius: 3px;
+    background: #d29b62;
+    cursor: pointer; cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+    /* box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; */
+    background: #d26262;
 }
