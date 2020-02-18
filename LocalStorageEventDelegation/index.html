@@ -50,7 +50,13 @@
         function addItem(e) {
             e.preventDefault()
             const text = this.querySelector('[name=item]').value // refers to form tag containing input with name="item"
-            console.log(text)
+            const item = {
+                text, //es6 shorthand for text: text
+                done: false
+            }
+            console.log(item)
+
+
         }
         addItems.addEventListener('submit', addItem)
     </script>
