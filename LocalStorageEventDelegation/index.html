@@ -55,7 +55,8 @@
                 done: false
             }
             console.log(item)
-
+            item.push(items)
+            this.reset() //clears inputs
 
         }
         addItems.addEventListener('submit', addItem)
