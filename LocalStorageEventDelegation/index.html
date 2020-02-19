@@ -62,6 +62,11 @@
 
         }
 
+        function toggleDone(e) {
+            if (!e.target.matches('input')) return
+            console.log(e.target.checked)
+        }
+
         function populateList(plates = [], platesList) {
             platesList.innerHTML = plates.map((plate, i) => {
                 return `
@@ -74,7 +79,8 @@
         }
 
         addItems.addEventListener('submit', addItem)
-        document.onload(populateList(items, itemsList))
+        itemsList.addEventListener('click', toggleDone)
+        populateList(items, itemsList)
     </script>
 
 
