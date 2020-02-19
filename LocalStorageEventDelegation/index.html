@@ -64,7 +64,10 @@
 
         function toggleDone(e) {
             if (!e.target.matches('input')) return
-            console.log(e.target.checked)
+            const el = e.target;
+            const elIndex = el.dataset.index
+            items[elIndex].done = !items[elIndex].done
+            console.log(el.dataset.index)
         }
 
         function populateList(plates = [], platesList) {
