@@ -65,8 +65,9 @@
         function toggleDone(e) {
             if (!e.target.matches('input')) return
             const el = e.target;
-            const elIndex = el.dataset.index
-            items[elIndex].done = !items[elIndex].done
+            const elIndex = el.dataset.index // getting specified html element using dataset attribute
+            items[elIndex].done = !items[elIndex].done //toggle obj done property
+            localStorage.setItem('items', JSON.stringify(items)) //saving data to LS
             console.log(el.dataset.index)
         }
 
