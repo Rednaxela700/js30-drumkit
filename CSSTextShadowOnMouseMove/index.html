@@ -19,11 +19,14 @@
 
     function shadow(e) {
         const {offsetWidth: width, offsetHeight: height} = hero;
-        let { offsetX: x, offsetY: y} = e;
-
-    //    avoid 0 based values calculating items offset top and left
-        y = y + e.target.offsetLeft;
-        x = x + e.target.offsetLeft;
+        let {offsetX: x, offsetY: y} = e;
+        //problem: x & y are set to zero when mouse is in top left corner
+        //fix:    avoid 0 based values calculating items offset top and left
+        if (this !== e.target) {
+            y = y + e.target.offsetLeft;
+            x = x + e.target.offsetLeft;
+        }
+        console.log(x, y)
     }
 
     hero.addEventListener('mousemove', shadow)
