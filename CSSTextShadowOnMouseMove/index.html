@@ -16,6 +16,8 @@
 <script>
     const hero = document.querySelector('.hero');
     const heroText = hero.querySelector('h1');
+    // set maximum distance
+    const walk = 100; // 100px
 
     function shadow(e) {
         const {offsetWidth: width, offsetHeight: height} = hero;
@@ -27,6 +29,10 @@
             x = x + e.target.offsetLeft;
         }
         console.log(x, y)
+
+        const xWalk = (x /width * walk) - (walk / 2);
+        const yWalk = (y /height * walk) - (walk / 2);
+
     }
 
     hero.addEventListener('mousemove', shadow)
