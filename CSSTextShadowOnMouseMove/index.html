@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CSS Text Shadow on Mouse Move</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -33,7 +34,7 @@
         const xWalk = Math.round(x /width * walk) - (walk / 2);
         const yWalk = Math.round(y /height * walk) - (walk / 2);
 
-
+    heroText.style.textShadow = `${xWalk}px ${yWalk}px 0 rgba(255, 0, 255, .7)`
     }
 
     hero.addEventListener('mousemove', shadow)
